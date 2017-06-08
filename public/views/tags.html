@@ -1,0 +1,60 @@
+<div id="content" ng-controller="tagCtrl">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <!-- Main Column -->
+            <div class="col-md-9">
+                <div class="blog-post">
+                    <div class="blog-item">
+                        <div class="blog-item-footer">
+                            <div class="blog-recent-comments panel panel-default margin-bottom-30">
+                                <div class="panel-heading">
+                                    <h3>标签管理</h3>
+                                </div>
+                                <ul class="list-group">
+                                    <!-- Comment Form -->
+                                    <li class="list-group-item">
+                                        <div class="blog-comment-form">
+                                            <div class="row margin-top-20">
+                                                <div class="col-md-12">
+                                                    <div class="pull-left">
+                                                        <h3>所有标签</h3>
+                                                        <span ng-repeat="item in tags">
+                                                            {{item.tagName}}<button ng-click="deleteTag(item)">删除</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row margin-top-20">
+                                                <div class="col-md-12">
+                                                    <div class="pull-left">
+                                                        <h3>编辑标签</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row margin-top-20">
+                                                <div class="col-md-12">
+                                                    <form>
+                                                        <label>新建标签</label>
+                                                        <div class="row margin-bottom-20">
+                                                            <div class="col-md-7 col-md-offset-0">
+                                                                <input class="form-control" type="text" ng-model="currentTags.tagName">
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            <button class="btn btn-primary" type="submit" ng-click="createTag(currentTags)">保存标签</button>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- End Comment Form -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

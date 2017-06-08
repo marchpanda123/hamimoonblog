@@ -1,0 +1,29 @@
+<div ng-controller="albumCtrl" class="ngdialog-message">
+    <div class="">
+        <h3>添加新照片 </h3>
+    </div>
+    <div class="">&nbsp;</div>
+    <div class="">
+        <form ng-submit="createAlbumpic(currentAlbumpic)" name="login_form" ng-disabled="login_form.$invalid">
+            <div class="form-group">
+                <label>相片描述</label>
+                <textarea class="form-control input-sm" placeholder="introduction" ng-model="currentAlbumpic.content"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">上传照片</label>
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-7 col-md-offset-0">
+                            <input type="file" id="exampleInputFile" class="form-control" file-model="customerpic.albumImage">
+                            <div class="btn btn-primary" ng-click="Submitpic()">提交</div>
+                            <img ng-src="../uploads/{{currentAlbumpic.albumImage}}" style="width: 50px">
+                        </div>
+                    </div>
+            </div>
+            <button type="submit" class="btn btn-info btn-sm" >确定</button>
+            <button type="button" class="btn btn-default btn-sm" ng-click=closeThisDialog("Cancel")>取消</button> &nbsp; &nbsp;
+        </form>
+    </div>
+    <div>
+
+    </div>
+</div>

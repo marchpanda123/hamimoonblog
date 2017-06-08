@@ -1,0 +1,121 @@
+    <!-- === BEGIN CONTENT === -->
+    <div id="content">
+        <div class="container no-padding">
+            <div class="row">
+                <!-- Carousel Slideshow -->
+                <div id="carousel-example" class="carousel slide" data-ride="carousel" ng-controller="carouselCtrl">
+                    <!-- Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example" data-slide-to="1"></li>
+                        <li data-target="#carousel-example" data-slide-to="2"></li>
+                    </ol>
+                    <div class="clearfix"></div>
+                    <!-- End Carousel Indicators -->
+                    <!-- Carousel Images -->
+                    <div class="carousel-inner">
+                        <div class="item" ng-class="{active:!$index}" ng-repeat="item in carousels">
+                            <img ng-src="../uploads/{{item.carouselImage}}">
+                        </div>
+                    </div>
+                    <!-- End Carousel Images -->
+                    <!-- Carousel Controls -->
+                    <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                    <!-- End Carousel Controls -->
+                </div>
+                <!-- End Carousel Slideshow -->
+            </div>
+        </div>
+        <div class="container background-gray-lighter">
+            <div class="row margin-vert-40">
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <i class="fa-calendar fa-5x color-primary"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="margin-top-5 margin-bottom-0">时间</h2>
+                        <p id="jiaweitime">WORKING HOURS</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <i class="fa-tachometer fa-5x color-primary"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="margin-top-5 margin-bottom-0">文章</h2>
+                        <p>共有{{articles.length}}篇文章</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <i class="fa-users fa-5x color-primary"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="margin-top-5 margin-bottom-0">用户</h2>
+                        <p>HuangRong</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container background-white">
+            <div class="row margin-vert-30">
+                <!-- Main Text -->
+                <div class="col-md-12">
+                    <h2 class="text-center">Welcome to LifeStyle</h2>
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                        lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p class="text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+                        augue duis dolore te feugait nulla facilisi. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Curabitur eget nisl
+                        a risus.</p>
+                </div>
+                <!-- End Main Text -->
+            </div>
+        </div>
+        <div class="container background-gray-lighter">
+            <div class="row padding-vert-20">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-10">
+                    <!-- Portfolio -->
+                    <ul class="portfolio-group">
+                        <!-- Portfolio Item -->
+                        <li class="portfolio-item col-sm-6 col-xs-6 padding-20" ng-repeat="item in homeArticles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <a ng-click="toArticleUser(item._id)">
+                                <figure class="animate fadeInLeft">
+                                    <img alt="image1" ng-src="../uploads/{{item.pageImage}}">
+                                    <figcaption>
+                                        <h3>{{item.title}}</h3>
+                                        <span><i class="fa-clock-o fa-1x color-primary"></i>{{item.created}}</span><br/>
+                                        <span><i class="fa-file-text-o fa-1x color-primary"></i>{{item.introduction}}</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <!-- //Portfolio Item// -->
+                    </ul>
+                    <!-- End Portfolio -->
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+            View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+                <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+        </div>
+        <div class="container background-white">
+            <div class="row padding-vert-40">
+                <div class="col-md-12">
+                    <h2 class="animate fadeIn text-center">WE ARE CURRENTLY HIRING!</h2>
+                    <p class="animate fadeIn text-center">If you like to work with a creative team in a lively and friendly enviroment then call us today!.</p>
+                    <p class="animate fadeInUp text-center">
+                        <button class="btn btn-primary btn-lg" type="button">View Details</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- === END CONTENT === -->

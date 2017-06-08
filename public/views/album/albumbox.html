@@ -1,0 +1,40 @@
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <div class="col-md-12">
+                <h2>记录生活的美好</h2>
+                <!-- Filter Buttons -->
+                <div class="portfolio-filter-container margin-top-20">
+                    <ul class="portfolio-filter">
+                        <li class="portfolio-filter-label label label-primary pointCursor" ng-click="openCreateAlbum()">
+                            创建相册:
+                        </li>
+                        <li>
+                            <a href="#" class="portfolio-selected btn btn-default" data-filter="*">All</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Filter Buttons -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 portfolio-group no-padding">
+                <!-- Portfolio Item -->
+                <div class="col-md-4 portfolio-item margin-bottom-40 video" ng-repeat="item in albumboxes">
+                    <div>
+                        <a ng-click="toAlbumbox(item._id)">
+                            <figure>
+                                <img ng-src="../uploads/{{item.albumPage}}" alt="image1">
+                                <figcaption>
+                                    <h3 class="margin-top-20">{{item.title}}</h3>
+                                    <span>{{item.introduction}}</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <!-- End Portfolio Item -->
+            </div>
+        </div>
+    </div>
+</div>

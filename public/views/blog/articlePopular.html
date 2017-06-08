@@ -1,0 +1,22 @@
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <!-- Main Column -->
+            <div class="col-md-12">
+                <h2>设置最热文章</h2>
+                <div class="panel panel-info">
+               		<div class="panel-heading">
+                 		<h3 class="panel-title">文章列表</h3>
+               		</div>
+               		<div class="panel-body" ng-repeat="item in articles">
+               			{{item.title}}----{{item.popular}}
+               			<button ng-if="!item.popular" ng-click="setPopular(item)">最热</button>
+                    <button ng-if="item.popular" ng-click="setoffPopular(item)">取消</button>
+               		</div>
+            	</div>
+            </div>
+            
+            <!-- End Main Column -->
+        </div>
+    </div>
+</div>

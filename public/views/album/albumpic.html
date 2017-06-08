@@ -1,0 +1,42 @@
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <div class="col-md-12">
+                <h2>我的相片</h2>
+                <!-- Filter Buttons -->
+                <div class="portfolio-filter-container margin-top-20">
+                    <ul class="portfolio-filter">
+                        <li class="portfolio-filter-label label label-primary pointCursor" ng-click="openCreateAlbumpic()">
+                            添加照片
+                        </li>
+                        <li class="portfolio-filter-label label label-primary pointCursor" ui-sref="app.albumbox">
+                            返回我的相册
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Filter Buttons -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 portfolio-group no-padding">
+                <!-- Portfolio Item -->
+                <div class="col-md-3 portfolio-item margin-bottom-40 design" ng-repeat="item in albumpicDetail.albumpics">
+                    <div>
+                        <a ng-click="openAlbumpic(item)">
+                            <figure>
+                                <img ng-src="../uploads/{{item.albumImage}}" alt="image1">
+                                <figcaption>
+                                    <h3 class="margin-top-20">{{item.content}}</h3>
+                                </figcaption>
+
+                            </figure>
+                        </a>
+                        <a ng-if="isAdmin" class="pointCursor" ng-click="deleteAlbumpic(item)">删除</a>
+                    </div>
+                </div>
+                <!-- End Portfolio Item -->
+            </div>
+        </div>
+    </div>
+</div>
+

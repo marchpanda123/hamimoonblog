@@ -1,0 +1,137 @@
+<!-- === BEGIN CONTENT === -->
+<div id="content" ng-controller="articleCtrl">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <!-- Main Column -->
+            <div class="col-md-9">
+                <!-- Blog Post -->
+                <div class="blog-post padding-bottom-20" ng-repeat="item in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                    <!-- Blog Item Header -->
+                    <div class="blog-item-header">
+                        <!-- Title -->
+                        <h2>
+                            <a class="pointCursor" ng-click="toArticle(item._id)">
+                                {{item.title}}</a>
+                        </h2>
+                        <div class="clearfix"></div>
+                        <!-- End Title -->
+                    </div>
+                    <!-- End Blog Item Header -->
+                    <!-- Blog Item Details -->
+                    <div class="blog-post-details">
+                        <!-- Author Name -->
+                        <div class="blog-post-details-item blog-post-details-item-left">
+                            <i class="fa fa-user color-gray-light"></i>
+                            <a href="#">Admin</a>
+                        </div>
+                        <!-- End Author Name -->
+                        <!-- Date -->
+                        <div class="blog-post-details-item blog-post-details-item-left">
+                            <i class="fa fa-calendar color-gray-light"></i>
+                            <a href="#">{{item.created}}</a>
+                        </div>
+                        <!-- End Date -->
+                        <!-- Tags -->
+                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
+                            <i class="fa fa-tag color-gray-light"></i>
+                            <a href="#">{{item.belongTag.tagName}}</a>
+                        </div>
+                        <!-- End Tags -->
+                        <!-- # of Comments -->
+                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
+                            <a href="">
+                                <i class="fa fa-comments color-gray-light"></i>
+                                {{item.comments.length}} Comments
+                            </a>
+                        </div>
+                        <!-- End # of Comments -->
+                    </div>
+                    <!-- End Blog Item Details -->
+                    <!-- Blog Item Body -->
+                    <div class="blog">
+                        <div class="clearfix"></div>
+                        <div class="blog-post-body row margin-top-15">
+                            <div class="col-md-5">
+                                <img class="margin-bottom-20" ng-src="../uploads/{{item.pageImage}}" alt="thumb1">
+                            </div>
+                            <div class="col-md-7">
+                                <p>{{item.introduction}}</p>
+                                <!-- Read More -->
+                                <a ng-click="toArticle(item._id)" class="btn btn-primary">
+                                    Read More
+                                    <i class="icon-chevron-right readmore-icon"></i>
+                                </a>
+                                <!-- End Read More -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Blog Item Body -->
+                </div>
+                <!-- End Blog Item -->
+                <!-- Pagination -->
+                <!-- <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li class="disabled">
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul> -->
+                View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+                <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+                <!-- End Pagination -->
+            </div>
+            <!-- End Main Column -->
+            <!-- Side Column -->
+            <div class="col-md-3">
+                <!-- Blog Tags -->
+                <div class="blog-tags">
+                    <h3>标签</h3>
+                    <ul class="blog-tags" ng-repeat="item in articleTags">
+                        <li>
+                            <a href="#" class="blog-tag">{{item.tagName}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Blog Tags -->
+                <!-- Recent Posts -->
+                <div class="recent-posts">
+                    <h3>最赞文章</h3>
+                    <ul class="posts-list margin-top-10" ng-repeat="item in articles | filter:{popular:true}">
+                        <li>
+                            <div class="recent-post">
+                                <a href="">
+                                    <img class="pull-left" ng-src="../uploads/{{item.pageImage}}" alt="thumb1">
+                                </a>
+                                <a href="#" class="posts-list-title">{{item.title}}</a>
+                                <br>
+                                <span class="recent-post-date">
+                                    {{item.created}}
+                                </span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Recent Posts -->
+            </div>
+            <!-- End Side Column -->
+        </div>
+    </div>
+</div>
+<!-- === END CONTENT === -->
