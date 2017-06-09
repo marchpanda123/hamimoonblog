@@ -33,45 +33,73 @@
         </div>
         <div class="container background-gray-lighter">
             <div class="row margin-vert-40">
-                <div class="col-md-4">
+
+                <div class="col-md-3">
                     <div class="col-md-4">
-                        <i class="fa-calendar fa-5x color-primary"></i>
+                        <i class="fa-file-text-o fa-4x color-primary"></i>
                     </div>
                     <div class="col-md-8">
-                        <h2 class="margin-top-5 margin-bottom-0">时间</h2>
-                        <p id="jiaweitime">WORKING HOURS</p>
+                        <h2 class="margin-top-5 margin-bottom-0 indexfont1">文章</h2>
+                        <p class="indexfont2">共有{{articlesUser.length}}篇文章</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="col-md-4">
-                        <i class="fa-tachometer fa-5x color-primary"></i>
+                        <i class="fa-plane fa-4x color-primary"></i>
                     </div>
                     <div class="col-md-8">
-                        <h2 class="margin-top-5 margin-bottom-0">文章</h2>
-                        <p>共有{{articles.length}}篇文章</p>
+                        <h2 class="margin-top-5 margin-bottom-0 indexfont1">代购</h2>
+                        <p class="indexfont2">共有9种产品</p>
                     </div>
-                </div>
-                <div class="col-md-4">
+                </div> 
+                <div class="col-md-3">
                     <div class="col-md-4">
-                        <i class="fa-users fa-5x color-primary"></i>
+                        <i class="fa-picture-o fa-4x color-primary"></i>
                     </div>
                     <div class="col-md-8">
-                        <h2 class="margin-top-5 margin-bottom-0">用户</h2>
-                        <p>HuangRong</p>
+                        <h2 class="margin-top-5 margin-bottom-0 indexfont1">图册</h2>
+                        <p class="indexfont2">共有{{albumboxes.albumpics.length || 0}}张图片</p>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="col-md-4">
+                        <i class="fa-thumbs-o-up fa-4x color-primary"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="margin-top-5 margin-bottom-0 indexfont1">每周上新</h2>
+                        <p class="indexfont2">最热推荐</p>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="container background-white">
             <div class="row margin-vert-30">
                 <!-- Main Text -->
-                <div class="col-md-12">
-                    <h2 class="text-center">Welcome to LifeStyle</h2>
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p class="text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
-                        augue duis dolore te feugait nulla facilisi. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Curabitur eget nisl
-                        a risus.</p>
+                <div class="col-md-3">
+                    <img src="../img/3.jpg" class="indeximg1">
+                    <div>
+                        <ul class="indexlist1">
+                            <li class="indexlistli1"><i class="fa-comments fa-1x color-green"></i><span class="indexlistlip1">c1234_567</span></li>
+                            <li class="indexlistli1"><i class="fa-envelope-o fa-1x color-red"></i><span class="indexlistlip1">hrfr33@hotmail.com</span></li>
+                            <li class="indexlistli1"><i class="fa-twitter fa-1x color-lightblue"></i><span class="indexlistlip1">rong.huang</span></li>
+                            <li class="indexlistli1"><i class="fa-facebook fa-1x color-blue"></i><span class="indexlistlip1">huangrong</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h2 class="indexfont3"><i class="fa-heart fa-1x color-pink"></i>芋头熊的巴黎生活</h2>
+                    <p class="indexfont4">Le coeur de vingt ans est fait pour aller au bout du monde.<br>
+                    (二十岁的心应该去世界最远的地方流浪)<br>
+                    二十岁的我向往巴黎，于是我来到了巴黎。<br>
+                    <br>
+                    在这两年的留学生活让走重新认识了巴黎，重新认识了法国。<br>
+                    <br>
+                    法国和中国代表两种截然不同的生活方式。中国人追求人定胜天，凡事要逆流而上。法国人讲究和平共存，凡事顺势而为。北京有很多摩天大楼，巴黎的房子都是矮矮的古迹。北京不断创新，巴黎永远有怀旧。巴黎人在咖啡厅聊天，北京人在咖啡厅用计算机。北京有人潮，巴黎有味道。北京有炒肝，巴黎有蛋糕。<br>
+                    <br>
+                    利尔克说，巴黎是一座无与伦比的城市。是的，从古至今巴黎吸引全世界的人来到这里。有人因巴黎辉煌一生，也有人因巴黎郁郁消沉。尼采在这里寻到查拉图司特拉灵感，梵高在这里遇见奔放希冀的向日葵，你想在这遇见什么呢？<br>
+                    <br>
+                    芋头熊带你遇见Parisien巴黎人的生活，巴黎的美景，遇见好东西，遇见丰富生活小经验，遇见浪漫，遇见法国。</p>
                 </div>
                 <!-- End Main Text -->
             </div>

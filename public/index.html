@@ -77,19 +77,24 @@
                 <div class="text-center visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <span ui-sref="app" class="fa-home pointCursor">芋头的家</span>
+                            <span ui-sref="app" class="fa-home pointCursor">首页</span>
                         </li>
                         <li>
-                            <span class="fa-font pointCursor">芋头的生活</span>
+                            <span class="fa-heart pointCursor">慢生活</span>
                             <ul>
                                 <li ng-if="!isAuthenticated">
-                                    <a ui-sref="app.articlesUser">芋头的文章</a>
+                                    <a ui-sref="app.articlesUser">心情随笔</a>
+                                    <a ui-sref="app.albumbox">图锦</a>
                                 </li>
                                 <li ng-if="isAuthenticated && !isAdmin">
-                                    <a ui-sref="app.articlesUser">芋头的文章</a>
+                                    <a ui-sref="app.articlesUser">慢生活</a>
+                                    <a ui-sref="app.albumbox">芋头熊的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
                                     <a ui-sref="app.articles">我的文章</a>
+                                </li>
+                                <li ng-if="isAuthenticated && isAdmin">
+                                    <a ui-sref="app.albumbox">我的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
                                     <a ui-sref="app.articleCreate">创建新文章</a>
@@ -106,7 +111,7 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-gears pointCursor">芋头的代购</span>
+                            <span class="fa-shopping-cart pointCursor">芋头熊的代购</span>
                             <ul>
                                 <li>
                                     <span ui-sref="app.daigou" class="pointCursor">蓉蓉小法代</span>
@@ -164,7 +169,7 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-copy">芋头的金融圈</span>
+                            <span class="fa-copy">科普区</span>
                             <ul>
                                 <li>
                                     <a href="pages-about-us.html">About Us</a>
@@ -199,13 +204,12 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-th pointCursor" ui-sref="app.albumbox" ng-if="!isAuthenticated">芋头的相册</span>
-                            <span class="fa-th pointCursor" ui-sref="app.albumbox" ng-if="isAuthenticated && !isAdmin">芋头的相册</span>
-                            <span class="fa-th pointCursor" ui-sref="app.albumbox" ng-if="isAuthenticated && isAdmin">我的相册</span>
+                            <span class="fa-pencil pointCursor" ng-if="!isAuthenticated">留言板</span>
+                            
                         </li>
                         
                         <li>
-                            <span ui-sref="app.aboutme" class="fa-comment pointCursor pointCursor">关于芋头</span>
+                            <span ui-sref="app.aboutme" class="fa-comments pointCursor pointCursor">关于芋头</span>
                         </li>
                     </ul>
                 </div>
