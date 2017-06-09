@@ -84,17 +84,12 @@
                             <ul>
                                 <li ng-if="!isAuthenticated">
                                     <a ui-sref="app.articlesUser">芋头的文章</a>
-                                    <a ui-sref="app.albumbox">芋头的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && !isAdmin">
                                     <a ui-sref="app.articlesUser">芋头的文章</a>
-                                    <a ui-sref="app.albumbox">芋头的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
                                     <a ui-sref="app.articles">我的文章</a>
-                                </li>
-                                <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.albumbox">我的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
                                     <a ui-sref="app.articleCreate">创建新文章</a>
@@ -204,21 +199,9 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-th">敬请期待</span>
-                            <ul>
-                                <li>
-                                    <a href="portfolio-2-column.html">2 Column</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-3-column.html">3 Column</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-4-column.html">4 Column</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-6-column.html">6 Column</a>
-                                </li>
-                            </ul>
+                            <span class="fa-th pointCursor" ui-sref="app.albumbox" ng-if="!isAuthenticated">芋头的相册</span>
+                            <span class="fa-th pointCursor" ui-sref="app.albumbox" ng-if="isAuthenticated && !isAdmin">芋头的相册</span>
+                            <span class="fa-th pointCursor" ui-sref="app.albumbox" ng-if="isAuthenticated && isAdmin">我的相册</span>
                         </li>
                         
                         <li>

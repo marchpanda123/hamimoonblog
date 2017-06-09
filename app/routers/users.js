@@ -21,7 +21,11 @@ router.get('/exp', Verify.verifyOrdinaryUser, function(req,res,next) {
 
 
 router.post('/register', function(req, res) {
-	User.register(new User({ username : req.body.username}),
+	User.register(new User({ username : req.body.username, 
+    firstname : req.body.firstname,
+    lastname : req.body.lastname,
+    age: req.body.age,
+    gender: req.body.gender}),
 	req.body.password, function(err, user) {
 		if (err) {
 			return res.status(500).json({err: err});

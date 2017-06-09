@@ -6,11 +6,8 @@
                 <!-- Filter Buttons -->
                 <div class="portfolio-filter-container margin-top-20">
                     <ul class="portfolio-filter">
-                        <li class="portfolio-filter-label label label-primary pointCursor" ng-click="openCreateAlbum()">
+                        <li class="portfolio-filter-label label label-primary pointCursor" ng-click="openCreateAlbum()" ng-if="isAdmin">
                             创建相册:
-                        </li>
-                        <li>
-                            <a href="#" class="portfolio-selected btn btn-default" data-filter="*">All</a>
                         </li>
                     </ul>
                 </div>
