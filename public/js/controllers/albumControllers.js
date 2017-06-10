@@ -16,9 +16,9 @@
 			multipartForm,
 			$stateParams,
 			AuthFactory){
-			$scope.$on('$stateChangeSuccess', function() { 
+/*			$scope.$on('$stateChangeSuccess', function() { 
 				window.parent.$("body").animate({scrollTop:500}, 'slow'); 
-			});
+			});*/
 
 			$scope.isAuth = AuthFactory.isAuthenticated();
 			$scope.isAdmin = AuthFactory.isAdmin();

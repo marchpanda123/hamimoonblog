@@ -30,6 +30,7 @@
 </head>
 
 <body>
+
     <div id="body-bg">
     <ul class="social-icons pull-right hidden-xs" ng-controller="userCtrl">
         <li class="social-login">
@@ -52,10 +53,9 @@
         </li>
         <li class="social-googleplus">
             <a href="#" target="_blank" title="GooglePlus"></a>
-        </li> -->
-        
+        </li> -->  
     </ul>
-    <div id="pre-header" class="container" style="height:340px">
+    <div id="pre-header" class="container pre_header_mobile">
     </div>
     <div id="header">
         <div class="container">
@@ -70,6 +70,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Top Menu -->
     <div id="hornav" class="container no-padding" ng-controller="userCtrl">
         <div class="row">
@@ -77,14 +79,14 @@
                 <div class="text-center visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <span ui-sref="app" class="fa-home pointCursor">首页</span>
+                            <span ui-sref="app" class="fa-home pointCursor" ng-click="toTopDisplay()">首页</span>
                         </li>
                         <li>
                             <span class="fa-heart pointCursor">慢生活</span>
                             <ul>
                                 <li ng-if="!isAuthenticated">
-                                    <a ui-sref="app.articlesUser">心情随笔</a>
-                                    <a ui-sref="app.albumbox">图锦</a>
+                                    <a ui-sref="app.articlesUser" ng-click="toTopDisplay()">心情随笔</a>
+                                    <a ui-sref="app.albumbox" ng-click="toTopDisplay()">图锦</a>
                                 </li>
                                 <li ng-if="isAuthenticated && !isAdmin">
                                     <a ui-sref="app.articlesUser">慢生活</a>
@@ -111,10 +113,10 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-shopping-cart pointCursor">芋头熊的代购</span>
+                            <span class="fa-shopping-cart pointCursor" ng-click="toTopDisplay()">芋头熊的代购</span>
                             <ul>
                                 <li>
-                                    <span ui-sref="app.daigou" class="pointCursor">蓉蓉小法代</span>
+                                    <span ui-sref="app.daigou" class="pointCursor" ng-click="toTopDisplay()">蓉蓉小法代</span>
                                 </li>
                                 <li class="parent">
                                     <span class="pointCursor pointCursor">佳丽雅奶粉</span>
@@ -169,7 +171,7 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-copy">科普区</span>
+                            <span class="fa-copy" ng-click="toTopDisplay()">科普区</span>
                             <ul>
                                 <li>
                                     <a href="pages-about-us.html">About Us</a>
@@ -204,12 +206,12 @@
                             </ul>
                         </li>
                         <li>
-                            <span class="fa-pencil pointCursor" ng-if="!isAuthenticated">留言板</span>
+                            <span class="fa-pencil pointCursor" ng-if="!isAuthenticated" ng-click="toTopDisplay()">留言板</span>
                             
                         </li>
                         
                         <li>
-                            <span ui-sref="app.aboutme" class="fa-comments pointCursor pointCursor">关于芋头</span>
+                            <span ui-sref="app.aboutme" class="fa-comments pointCursor pointCursor" ng-click="toTopDisplay()">关于芋头</span>
                         </li>
                     </ul>
                 </div>
@@ -217,17 +219,39 @@
         </div>
     </div>
     <!-- End Top Menu -->
+    
+    <!-- mobile menu -->
+    <nav class="cd-stretchy-nav visible-xs">
+        <a class="cd-nav-trigger" href="#0">
+            <span aria-hidden="true"></span>
+        </a>
+        <ul class="cd-liststylenone">
+            <li><a href="#0" class="active"><span>Home</span></a></li>
+            <li><a href="#0"><span>Portfolio</span></a></li>
+            <li><a href="#0"><span>Services</span></a></li>
+            <li><a href="#0"><span>Store</span></a></li>
+            <li><a href="#0"><span>Contact</span></a></li>
+        </ul>
+        <span aria-hidden="true" class="stretchy-nav-bg"></span>
+    </nav>
+    
+
+
+
     <div id="post_header" class="container" style="height:340px">
     </div>
     <div id="content-top-border" class="container">
     </div>
     <!-- === END HEADER === -->
     
+
+
+
     <div ui-view="content"></div>
 
     <div ui-view="footer"></div>
     
-
+    </div>
 
     <!-- JS -->
     <script type="text/javascript" src="js/assets/jquery.min.js" type="text/javascript"></script>

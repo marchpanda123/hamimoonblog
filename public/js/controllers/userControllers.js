@@ -18,6 +18,11 @@
 			$state,
 			ngDialog){
 
+		$scope.toTopDisplay = function() {
+				window.parent.$("body").animate({scrollTop:500}, 'slow'); 
+			}
+
+
 		//user login signup logout function
 		$scope.doLogin = function() {
         	AuthFactory.login($scope.user);

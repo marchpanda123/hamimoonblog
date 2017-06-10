@@ -1,11 +1,11 @@
 <!-- === BEGIN CONTENT === -->
 <div id="content" ng-controller="articleCtrl">
     <div class="container background-white">
-        <div class="row margin-vert-30">
+        <div class="row">
             <!-- Main Column -->
             <div class="col-md-9">
                 <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20" ng-repeat="item in articlesUser.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                <div class="blog-post articlesuserbox1" ng-repeat="item in articlesUser.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
                     <!-- Blog Item Header -->
                     <div class="blog-item-header">
                         <!-- Title -->
@@ -55,44 +55,15 @@
                                 <img class="margin-bottom-20" ng-src="../uploads/{{item.pageImage}}" alt="thumb1">
                             </div>
                             <div class="col-md-7">
-                                <p>{{item.introduction}}</p>
-                                <!-- Read More -->
-                                <a ng-click="toArticleUser(item._id)" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
+                                <p><i class="fa-spinner"></i>{{item.introduction}}</p>
                             </div>
                         </div>
                     </div>
                     <!-- End Blog Item Body -->
                 </div>
                 <!-- End Blog Item -->
-                <!-- Pagination -->
-                <!-- <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li class="disabled">
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul> -->
-                View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+                
+                展示 <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> 篇文章
                 <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
                 <!-- End Pagination -->
             </div>

@@ -25,10 +25,10 @@
 		    commentFactory,
 		    TagFactory){
 
-			/*scrollTop*/
-			$scope.$on('$stateChangeSuccess', function() { 
+
+			$scope.toTopDisplay = function() {
 				window.parent.$("body").animate({scrollTop:500}, 'slow'); 
-			});
+			}
 
 			/*RESTFUL articles */
 			$scope.currentArticles = null;
@@ -36,7 +36,8 @@
 			
 			var isAuth = AuthFactory.isAuthenticated();
 			var isAdmin = AuthFactory.isAdmin();
-
+			$scope.isAuth = AuthFactory.isAuthenticated();
+			$scope.isAdmin = AuthFactory.isAdmin();
 			$scope.listArticles = function(){
 				$scope.articles = ArticleFactory.query(function(){
 					//pagination
@@ -159,11 +160,15 @@
 				});
 			}
 
+
+
 			$scope.toArticleUser = function(articleCurrentId) {
 				if(isAuth&&isAdmin){
 					$state.go('app.article',{articleId: articleCurrentId});
+					window.parent.$("body").animate({scrollTop:500}, 'slow'); 
 				}else{
 					$state.go('app.articleUser',{articleUserId: articleCurrentId});
+					window.parent.$("body").animate({scrollTop:500}, 'slow'); 
 				};
 			}	
 			var articleUserId = $stateParams.articleUserId;
@@ -260,7 +265,6 @@
 			}
 			$scope.listTagsArticles();
 			$scope.listHomeArticles();
-			
 	}])
 	.filter('trustHtml', function ($sce) {
     	return function (input) {
