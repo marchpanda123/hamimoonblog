@@ -59,15 +59,15 @@ body {
 }
  @media screen and (max-width: 650px) {
     #body-bg {
-    background-attachment: fixed;
+    /* background-attachment: fixed;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0); */
     background-image: url("../img/77.jpg");
-    background-origin: padding-box;
+    /* background-origin: padding-box;
     background-position: 50% 0;
     background-repeat: no-repeat;
     background-size: cover !important;
-    position: relative;
+    position: relative; */
   }
 }
 
