@@ -7,7 +7,7 @@
                 <div class="blog-post">
                     <div class="blog-item-header">
                         <h2>
-                            <a href="#">
+                            <a>
                                 {{articleDetail.title}}
                             </a>
 
@@ -36,7 +36,7 @@
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
                             <a href="">
                                 <i class="fa fa-comments color-gray-light"></i>
-                                {{articleDetail.comments.length}} comments
+                                {{articleDetail.comments.length}} 条评论
                             </a>
                         </div>
                         <!-- edit -->
@@ -69,24 +69,18 @@
                                 <img class="margin-bottom-20" ng-src="../uploads/{{articleDetail.pageImage}}" alt="image1">
                             </div>
                             <div class="col-md-7">
-                                <p>{{articleDetail.introduction}}</p>
+                                <blockquote class="primary">
+                                    <p>
+                                        <em>{{articleUserDetail.introduction}}</em>
+                                    </p>
+                                    <small>
+                                        {{articleDetail.postedBy.username}}
+                                        <cite title="Source Title">芋头熊</cite>
+                                    </small>
+                                </blockquote>
                             </div>
                             <div class="col-md-12">
                                 <p ng-bind-html="articleDetail.content | trustHtml"></p>
-                                <!-- <blockquote class="primary">
-                                    <p>
-                                        <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-                                    </p>
-                                    <small>
-                                        Someone famous in
-                                        <cite title="Source Title">Source Title</cite>
-                                    </small>
-                                </blockquote>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.</p>
-                                <p>Ut summo deserunt sit, quaeque hendrerit assentior cu mei. Sale electram nam ut. Putent perpetua reformidans ex vix, libris nostrud tractatos cu sit, est porro omnes nominati eu. Cu nullam similique complectitur
-                                    eam. Viris phaedrum ullamcorper id eos.</p> -->
                             </div>
                         </div>
                         <div class="blog-item-footer">
@@ -98,12 +92,11 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img class="pull-left" src="../img/profiles/87.jpg" alt="image1">
+                                            <img class="pull-left articleuserimage" ng-src="../../img/3.jpg" alt="image1">
                                         </div>
-                                        <div class="col-md-10">
-                                            <label>John Doe</label>
-                                            <p>Lorem ipsum dolor sit amet, in pri offendit ocurreret. Vix sumo ferri an. pfs adodio fugit delenit ut qui. Omittam suscipiantur ex vel,ex audiam intellegat gfIn labitur discere eos, nam an feugiat
-                                                voluptua.</p>
+                                        <div class="col-md-10 articleusertext2">
+                                            <label>{{articleUserDetail.postedBy.username}}</label>
+                                            <p>所有的选择都没有对错，所以再见吧2016，不会回头，今天很残酷，明天更残酷，相信后天会美好！</p>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +112,7 @@
                                         <div class="row">
                                             <div class="col-md-2 profile-thumb">
                                                 <a href="#">
-                                                    <img class="media-object" ng-src="../img/profiles/99.jpg" alt="">
+                                                    <img class="media-object" ng-src="../img/profiles/100.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="col-md-10">
@@ -142,21 +135,6 @@
                                             </div>
                                             <div class="row margin-top-20">
                                                 <div class="col-md-12">
-
-                                                        <!-- <label>Name</label>
-                                                        <div class="row margin-bottom-20">
-                                                            <div class="col-md-7 col-md-offset-0">
-                                                                <input class="form-control" type="text">
-                                                            </div>
-                                                        </div>
-                                                        <label>Email
-                                                            <span>*</span>
-                                                        </label>
-                                                        <div class="row margin-bottom-20">
-                                                            <div class="col-md-7 col-md-offset-0">
-                                                                <input class="form-control" type="text">
-                                                            </div>
-                                                        </div> -->
                                                         <label>您的想法</label>
                                                         <div class="row margin-bottom-20">
                                                             <div class="col-md-11 col-md-offset-0">
@@ -185,7 +163,7 @@
             <div class="col-md-3">
                 <!-- Blog Tags -->
                 <div class="blog-tags">
-                    <h3>Tags</h3>
+                    <h3>标签</h3>
                     <ul class="blog-tags" ng-repeat="item in articleTags">
                         <li>
                             <a href="#" class="blog-tag">{{item.tagName}}</a>

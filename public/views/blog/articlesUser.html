@@ -22,13 +22,13 @@
                         <!-- Author Name -->
                         <div class="blog-post-details-item blog-post-details-item-left">
                             <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
+                            <a href="#">Huangrong</a>
                         </div>
                         <!-- End Author Name -->
                         <!-- Date -->
                         <div class="blog-post-details-item blog-post-details-item-left">
                             <i class="fa fa-calendar color-gray-light"></i>
-                            <a href="#">22nd Apr, 2014{{item.created}}</a>
+                            <a href="#">{{item.created}}</a>
                         </div>
                         <!-- End Date -->
                         <!-- Tags -->
@@ -41,7 +41,7 @@
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
                             <a href="">
                                 <i class="fa fa-comments color-gray-light"></i>
-                                {{item.comments.length}} Comments
+                                {{item.comments.length}}条评论
                             </a>
                         </div>
                         <!-- End # of Comments -->
@@ -72,9 +72,9 @@
             <div class="col-md-3">
                 <!-- Blog Tags -->
                 <div class="blog-tags">
-                    <h3>Tags</h3>
-                    <ul class="blog-tags" ng-repeat="item in articleTags">
-                        <li>
+                    <h3>标签</h3>
+                    <ul class="blog-tags">
+                        <li ng-repeat="item in articleTags">
                             <a href="#" class="blog-tag">{{item.tagName}}</a>
                         </li>
                     </ul>

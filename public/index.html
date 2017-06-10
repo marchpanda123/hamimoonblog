@@ -32,7 +32,7 @@
 <body>
 
     <div id="body-bg">
-    <ul class="social-icons pull-right hidden-xs" ng-controller="userCtrl">
+    <ul class="social-icons pull-right" ng-controller="userCtrl">
         <li class="social-login">
             <a ng-if="!isAuthenticated" ng-click="openLogin()" target="_blank" title="login"></a>
         </li>
@@ -79,7 +79,7 @@
                 <div class="text-center visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <span ui-sref="app" class="fa-home pointCursor" ng-click="toTopDisplay()">首页</span>
+                            <span ui-sref="app" class="fa-home pointCursor" ng-click="toTopDisplay()">首页{{isAdmin}}</span>
                         </li>
                         <li>
                             <span class="fa-heart pointCursor">慢生活</span>
@@ -221,16 +221,24 @@
     <!-- End Top Menu -->
     
     <!-- mobile menu -->
-    <nav class="cd-stretchy-nav visible-xs">
+    <nav class="cd-stretchy-nav visible-xs" ng-controller="userCtrl">
         <a class="cd-nav-trigger" href="#0">
             <span aria-hidden="true"></span>
         </a>
         <ul class="cd-liststylenone">
-            <li><a href="#0" class="active"><span>Home</span></a></li>
-            <li><a href="#0"><span>Portfolio</span></a></li>
-            <li><a href="#0"><span>Services</span></a></li>
-            <li><a href="#0"><span>Store</span></a></li>
-            <li><a href="#0"><span>Contact</span></a></li>
+            <li><a ui-sref="app" class="active"><span>首页</span></a></li>
+            <li ng-if="!isAuthenticated">
+                <a ui-sref="app.articlesUser"><span>文章</span></a>
+            </li>
+            <li ng-if="isAuthenticated && !isAdmin">
+                <a ui-sref="app.articlesUser"><span>文章</span></a>
+            </li>
+            <li ng-if="isAuthenticated && isAdmin">
+                <a ui-sref="app.articles"><span>我的文章</span></a>
+            </li>
+            <li><a ui-sref="app.daigou"><span>代购</span></a></li>
+            <li><a ui-sref="app.albumbox"><span>相册</span></a></li>
+            <li><a ui-sref="app.aboutme"><span>关于我</span></a></li>
         </ul>
         <span aria-hidden="true" class="stretchy-nav-bg"></span>
     </nav>

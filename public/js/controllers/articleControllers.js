@@ -92,6 +92,7 @@
 			//toArticle function
 			$scope.toArticle = function(articleId) {
 				$state.go('app.article',{articleId: articleId});
+				window.parent.$("body").animate({scrollTop:500}, 'slow'); 
 
 			}	
 			var articleId = $stateParams.articleId;
