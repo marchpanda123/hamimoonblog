@@ -35,40 +35,40 @@
         <div class="container background-gray-lighter hidden-xs">
             <div class="row margin-vert-40">
 
-                <div class="col-md-3">
-                    <div class="col-md-4">
+                <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <i class="fa-file-text-o fa-4x color-primary"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-sm-8">
                         <h2 ng-if="!isAuth" class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.articlesUser" ng-click="toTopDisplay()">文章</h2>
                         <h2 ng-if="isAuth && !isAdmin" class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.articlesUser" ng-click="toTopDisplay()" ng-click="toTopDisplay()">文章</h2>
                         <h2 ng-if="isAuth && isAdmin" class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.articles" ng-click="toTopDisplay()">文章</h2>
                         <p class="indexfont2">共有{{articlesUser.length}}篇文章</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="col-md-4">
+                <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <i class="fa-plane fa-4x color-primary"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-sm-8">
                         <h2 class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.daigou" ng-click="toTopDisplay()">代购</h2>
                         <p class="indexfont2">共有12种产品</p>
                     </div>
                 </div> 
-                <div class="col-md-3" ng-controller="albumCtrl">
-                    <div class="col-md-4">
+                <div class="col-md-3 col-sm-3" ng-controller="albumCtrl">
+                    <div class="col-md-4 col-sm-4">
                         <i class="fa-picture-o fa-4x color-primary"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-sm-8">
                         <h2 class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.albumbox" ng-click="toTopDisplay()">图册</h2>
                         <p class="indexfont2">共有{{albumboxes.length}}个相册</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="col-md-4">
+                <div class="col-md-3 col-sm-3">
+                    <div class="col-md-4 col-sm-4">
                         <i class="fa-thumbs-o-up fa-4x color-primary"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-sm-8">
                         <h2 class="margin-top-5 margin-bottom-0 indexfont1">每周上新</h2>
                         <p class="indexfont2">最热推荐</p>
                     </div>
@@ -122,7 +122,7 @@
         <div class="container background-white">
             <div class="row margin-vert-30">
                 <!-- Main Text -->
-                <div class="col-md-3 hidden-xs">
+                <div class="col-md-3 col-sm-3 hidden-xs">
                     <img src="../img/3.jpg" class="indeximg1">
                     <div>
                         <ul class="indexlist1">
@@ -172,13 +172,13 @@
                 <div class="col-md-12">
                     <h2 class="animate fadeIn"><i class="fa-leaf fa-1x color-scgreen"></i>心情随笔</h2>
                     <hr>
-                    <div class="blog col-md-6 col-xs-12" ng-repeat="item in homeArticles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                    <div class="blog col-md-6 col-sm-6 col-xs-12" ng-repeat="item in homeArticles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
                         <div class="clearfix"></div>
                         <div class="blog-post-body row indexarticlebox1">
-                            <div class="col-md-5">
+                            <div class="col-md-5 col-sm-5">
                                 <img ng-click="toArticleUser(item._id)" class="indexarticleimg1 pointCursor" ng-src="../uploads/{{item.pageImage}}" alt="thumb1">
                             </div>
-                            <div class="col-md-7 col-xs-12 indexarticletext1">
+                            <div class="col-md-7  col-sm-7 col-xs-12 indexarticletext1">
                                 <p class="indexarticletext2 pointCursor" ng-click="toArticleUser(item._id)">{{item.title}}</p>
                                 <p class="indexarticletext3"><i class="fa-info-circle fa-1x"></i>{{item.introduction}}</p>
                                 <p><i class="fa-clock-o fa-1x"></i>{{item.created}}</p>

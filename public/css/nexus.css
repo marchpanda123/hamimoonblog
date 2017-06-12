@@ -44,7 +44,7 @@ body {
   background-color: #F4F1EA;
   color: #656565;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 420px) {
   #body-bg {
     background-attachment: fixed;
     background-clip: border-box;
@@ -57,7 +57,7 @@ body {
     position: relative;
   }
 }
- @media screen and (max-width: 650px) {
+ @media screen and (max-width: 420px) {
     #body-bg {
     /* background-attachment: fixed;
     background-clip: border-box;
@@ -3421,13 +3421,13 @@ keyframes
   height: 340px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   .pre_header_mobile{
     height: 280px;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   .mobilebox1 {
     margin-bottom: 20px;
   }
