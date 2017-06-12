@@ -2,8 +2,23 @@
 <div id="content" ng-controller="articleCtrl">
     <div class="container background-white">
         <div class="row">
+            <nav class="breadcrumb">
+              <a class="breadcrumb-item" ui-sref="app">主页</a>
+              <span class="breadcrumb-item active" ui-sref="app.articles">/心情随笔</span>
+            </nav>
             <!-- Main Column -->
             <div class="col-md-9">
+                <div class="articleusertext5"><i class="fa-university fa-1x color-bigred"></i>心情随笔-芋头熊在巴黎</div>
+                <blockquote class="articleusertext6">
+                    <p>
+                        <em>爱生活，爱分享，发现身边的美</em>
+                    </p>
+                    <small>
+                        一只
+                        <cite title="Source Title">芋头熊</cite>
+                    </small>
+                </blockquote>
+                
                 <!-- Blog Post -->
                 <div class="blog-post articlesuserbox1" ng-repeat="item in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
                     <!-- Blog Item Header -->
@@ -72,7 +87,7 @@
             <div class="col-md-3">
                 <!-- Blog Tags -->
                 <div class="blog-tags">
-                    <h3>标签</h3>
+                    <h3><i class="fa-tags fa-1x color-bigred"></i>标签</h3>
                     <ul class="blog-tags">
                         <li ng-repeat="item in articleTags">
                             <a href="#" class="blog-tag">{{item.tagName}}</a>
@@ -82,7 +97,7 @@
                 <!-- End Blog Tags -->
                 <!-- Recent Posts -->
                 <div class="recent-posts">
-                    <h3>最赞文章</h3>
+                    <h3><i class="fa-thumbs-up fa-1x color-bigred"></i>最赞文章</h3>
                     <ul class="posts-list margin-top-10" ng-repeat="item in articles | filter:{popular:true}">
                         <li>
                             <div class="recent-post">

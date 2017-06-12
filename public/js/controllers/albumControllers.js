@@ -73,7 +73,6 @@
 				AlbumFactory.get({albumboxId:albumboxId},
 					function(albumpic) {
 						$scope.albumpicDetail = albumpic;
-						console.log($scope.albumpicDetail);
 					})
 			}
 

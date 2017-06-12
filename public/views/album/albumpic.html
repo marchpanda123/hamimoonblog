@@ -2,11 +2,16 @@
     <div class="container background-white">
         <div class="row margin-vert-30">
             <div class="col-md-12">
+                <nav class="breadcrumb">
+                  <a class="breadcrumb-item" ui-sref="app">主页</a>
+                  <a class="breadcrumb-item" ui-sref="app.albumbox">/图册锦集</a>
+                  <span class="breadcrumb-item active">/{{albumpicDetail.title}}</span>
+                </nav>
                 <h2>我的相片</h2>
                 <!-- Filter Buttons -->
                 <div class="portfolio-filter-container margin-top-20">
                     <ul class="portfolio-filter">
-                        <li class="portfolio-filter-label label label-primary pointCursor" ng-click="openCreateAlbumpic()">
+                        <li ng-if="isAdmin" class="portfolio-filter-label label label-primary pointCursor" ng-click="openCreateAlbumpic()">
                             添加照片
                         </li>
                         <li class="portfolio-filter-label label label-primary pointCursor" ui-sref="app.albumbox">

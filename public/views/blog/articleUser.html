@@ -2,6 +2,11 @@
 <div id="content" ng-controller="articleCtrl">
     <div class="container background-white">
         <div class="row margin-vert-30">
+        <nav class="breadcrumb">
+          <a class="breadcrumb-item" ui-sref="app">主页</a>
+          <a class="breadcrumb-item" ui-sref="app.articlesUser">/心情随笔</a>
+          <span class="breadcrumb-item active">/{{articleUserDetail.title}}</span>
+        </nav>
             <!-- Main Column -->
             <div class="col-md-9">
                 <div class="blog-post">

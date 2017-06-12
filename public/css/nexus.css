@@ -1282,7 +1282,7 @@ ul.menu ul {
 /*-----------------------------------------------------------------------------------*/
 blockquote {
   border: 1px solid #b3b3b3;
-  border-left: 10px solid #b3b3b3;
+  border-left: 10px solid #CD5C5C;
   border-radius: 0px;
   background: #fafafa;
   font-size: 16px;
@@ -2678,6 +2678,7 @@ ul.social-icons li a:hover {
   margin: 10px 0 20px;
   overflow: hidden;
   padding: 0;
+  margin-top: 30px;
 }
 .blog-tags li {
   float: left;
@@ -3394,7 +3395,22 @@ keyframes
 .articleusertext1{
   color:#8b8b8b;
 }
-
+.articleusertext5{
+  font-size: 30px;
+  margin-top: 30px;
+}
+.articleusertext6{
+  margin-top: 15px;
+}
+/* 
+.albumboxrow1 {
+  width :33.33%;
+}
+ */
+.daigouimg1{
+  width: 200px;
+  height: 200px;
+}
 
 
 /*mobile menu*/
@@ -3458,9 +3474,152 @@ keyframes
   .articleusertext2 p{
     color: #8b8b8b;
   }
+/*   .albumboxrow1 {
+  width :100%;
+} */
+ .portfolio-group .col-md-4{
+    width: 100%;
+  }
+
+  .articleusertext5{
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  .blog-post-details-item {
+    float: left;
+    padding: 0;
+    font-size: 12px;
+    background: #f4f4f4;
+    margin: 0 10px 0 0;
+  }
+
+  .indexfont1{
+    font-size: 16px;
+  }
+  .mobileindexnav1{
+    margin-top: 20px;
+  }
+  .background-777 {
+    background-image: url("../img/777.jpg");
+  }
+  .background-77 {
+    background-image: url("../img/77.jpg");
+  }
 }
 
 
 
 
 
+/*totop*/
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+header {
+  background: #5c4751;
+  height: 100px;
+  text-align: center;
+}
+header h1 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 1.6em;
+  margin-bottom: .2em;
+}
+header p {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: #957484;
+}
+@media only screen and (min-width: 1024px) {
+  header {
+    height: 200px;
+  }
+  header h1 {
+    font-size: 30px;
+    font-size: 1.875rem;
+    padding-top: 2.6em;
+  }
+}
+
+main p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 2em 0;
+}
+@media only screen and (min-width: 1024px) {
+  main p {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 25px;
+  right: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(232, 98, 86, 0.8) url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 50px;
+    width: 50px;
+    right: 70px;
+    bottom: 20px;
+  }
+}
+
+/*daigou detail*/
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }

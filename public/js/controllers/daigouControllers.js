@@ -5,5 +5,8 @@
 			/*$scope.$on('$stateChangeSuccess', function() { 
 				window.parent.$("body").animate({scrollTop:500}, 'slow'); 
 			});*/
+			$scope.toTopDisplay = function() {
+				window.parent.$("body").animate({scrollTop:500}, 'slow'); 
+			}
 		}]);
 })();

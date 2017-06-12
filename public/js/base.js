@@ -1,5 +1,5 @@
 (function(){
-	angular.module('startApp',['ui.router','ngResource','ngDialog','ui.bootstrap'])
+	angular.module('startApp',['ui.router','ngResource','ngDialog','ui.bootstrap','ngMaterial'])
 	.config(function($stateProvider, $urlRouterProvider) {
 		$stateProvider
 		//route for the home page we called app.
@@ -172,11 +172,83 @@
 					}
 				}
 			})
-			.state('app.daigou-detail', {
-				url:'daigou-detail',
+			.state('app.hufupin', {
+				url:'hufupin',
 				views:{
 					'content@': {
-						templateUrl:'views/daigou/daigou-detail.html',
+						templateUrl:'views/daigou/hufupin.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.yingyouer', {
+				url:'yingyouer',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/yingyouer.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.caizhuang', {
+				url:'caizhuang',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/caizhuang.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.xiangshui', {
+				url:'xiangshui',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/xiangshui.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.baojianpin', {
+				url:'baojianpin',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/baojianpin.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.dazhecun', {
+				url:'dazhecun',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/dazhecun.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.hongjiu', {
+				url:'hongjiu',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/hongjiu.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.shechipin', {
+				url:'shechipin',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/shechipin.html',
+						controller:'daigouCtrl'
+					}
+				}
+			})
+			.state('app.richang', {
+				url:'richang',
+				views:{
+					'content@': {
+						templateUrl:'views/daigou/richang.html',
 						controller:'daigouCtrl'
 					}
 				}
