@@ -3623,3 +3623,13 @@ main p {
       background: white; }
   .tabsdemoDynamicHeight md-content h1:first-child {
     margin-top: 0; }
+
+
+
+
+    /*responsive*/
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

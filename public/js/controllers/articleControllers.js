@@ -196,6 +196,15 @@
 		            comment: ""
 		        };
 		    }
+
+		    $scope.submitUserComment = function () {
+		        commentFactory.save({articleId: $stateParams.articleUserId}, $scope.mycomment);
+		        $state.go($state.current, {}, {reload: true});
+		        /*$scope.commentForm.$setPristine();*/
+		        $scope.mycomment = {
+		            comment: ""
+		        };
+		    }
 		    //tag list in createarticles
 		    $scope.listTagsArticles = function() {
 				$scope.articleTags = TagFactory.query();
