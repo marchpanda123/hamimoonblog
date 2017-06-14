@@ -2,26 +2,30 @@
     <div class="container background-white">
         <div class="row margin-vert-30">
             <!-- Main Column -->
-            <div class="col-md-12">
+            <div ng-controller="userCtrl" ng-if="!isAuth">
+                <a class="pointCursor" ng-click="openLogin()">请先登录</a>
+            </div>
+            <div class="col-md-12" ng-if="isAuth">
                 <h2>留言板</h2>
-                <div class="messageboard" ng-controller="userCtrl">
-                    <a ng-if="!isAuth" class="pointCursor" ng-click="openLogin()">请先登录</a>
-                    <textarea ng-if="isAuth" ng-model="currentMessages.message" class="messageinput" placeholder="写点啥呗~"></textarea>
+                <div class="messageboard">
+                    <textarea ng-model="currentMessages.message" class="messageinput" placeholder="写点啥呗~"></textarea>
                 </div>
-                <md-button class="md-raised md-primary" ng-click="createMessage(currentMessages)" ng-if="isAuth">提交</md-button>
-                <md-content>
-                    <md-list>
-                      <md-list-item class="md-3-line" ng-repeat="item in messages">
-                        <div class="md-list-item-text">
-                          <h3>{{item.message}}</h3>
-                          <h4>{{item.postedBy.username}}</h4>
-                          <p>{{item.created}}</p>
-                        </div>
-                        <md-button class="md-secondary">Respond</md-button>
-                        <md-divider ng-if="!$last"></md-divider>
-                      </md-list-item>
-                    </md-list>
-                </md-content>
+                <md-button class="md-raised md-primary" ng-click="createMessage(currentMessages)" >提交</md-button>
+            </div>
+            <div class="col-md-12">
+            <md-content>
+                <md-list>
+                  <md-list-item class="md-3-line" ng-repeat="item in messages">
+                    <div class="md-list-item-text">
+                      <h3>{{item.message}}</h3>
+                      <h4>{{item.postedBy.username}}</h4>
+                      <p>{{item.created}}</p>
+                    </div>
+                    <md-button class="md-secondary">Respond</md-button>
+                    <md-divider ng-if="!$last"></md-divider>
+                  </md-list-item>
+                </md-list>
+            </md-content>
             </div>
             <!-- End Main Column -->
         </div>
