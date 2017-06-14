@@ -15,7 +15,7 @@ var carouselCtrl = require('../controllers/carousel.js')
 var tagCtrl = require('../controllers/tag.js')
 var albumboxCtrl = require('../controllers/albumbox.js')
 var albumpicCtrl = require('../controllers/albumpic.js')
-var messageCtrl = require('../controllers/message.js')
+var messagebCtrl = require('../controllers/message.js')
 //middleware
 router.use(function(req, res, next) {
 	console.log('something is happening.');
@@ -79,11 +79,11 @@ router.delete('/albumbox/:albumboxId/albumpics/:albumpicId', Verify.verifyOrdina
 
 
 //message routers
-router.get('/message', messageCtrl.messageGet);
-router.post('/message', Verify.verifyOrdinaryUser, messageCtrl.messagePost);
-router.get('/message/:messageId', messageCtrl.messageGetId);
-router.put('/message/:messageId', Verify.verifyOrdinaryUser, messageCtrl.messagePutId);
-router.delete('/message/:messageId', Verify.verifyOrdinaryUser, messageCtrl.messageDeleteId);
+router.get('/messageb', messagebCtrl.messagebGet);
+router.post('/messageb', Verify.verifyOrdinaryUser, messagebCtrl.messagebPost);
+router.get('/messageb/:messagebId', messagebCtrl.messagebGetId);
+router.put('/messageb/:messagebId', Verify.verifyOrdinaryUser, messagebCtrl.messagebPutId);
+router.delete('/message/:messageId', Verify.verifyOrdinaryUser, messagebCtrl.messagebDeleteId);
 
 //upload images
 router.post('/upload', upload.any(), function(req, res, next) {

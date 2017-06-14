@@ -8,14 +8,14 @@
             <div class="col-md-12" ng-if="isAuth">
                 <h2>留言板</h2>
                 <div class="messageboard">
-                    <textarea ng-model="currentMessages.message" class="messageinput" placeholder="写点啥呗~"></textarea>
+                    <textarea ng-model="currentMessagesb.message" class="messageinput" placeholder="写点啥呗~"></textarea>
                 </div>
-                <md-button class="md-raised md-primary" ng-click="createMessage(currentMessages)" >提交</md-button>
+                <md-button class="md-raised md-primary" ng-click="createMessageb(currentMessagesb)" >提交</md-button>
             </div>
             <div class="col-md-12">
             <md-content>
                 <md-list>
-                  <md-list-item class="md-3-line" ng-repeat="item in messages">
+                  <md-list-item class="md-3-line" ng-repeat="item in messagesb">
                     <div class="md-list-item-text">
                       <h3>{{item.message}}</h3>
                       <h4>{{item.postedBy.username}}</h4>

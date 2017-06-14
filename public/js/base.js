@@ -258,7 +258,7 @@
 				views:{
 					'content@': {
 						templateUrl:'views/message.html',
-						controller:'messageCtrl'
+						controller:'messagebCtrl'
 					}
 				}
 			})

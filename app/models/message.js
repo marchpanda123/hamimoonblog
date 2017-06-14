@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var MessageSchema = new Schema({
+var MessagebSchema = new Schema({
 	created:{
 		type:Date,
 		default:Date.now
@@ -15,4 +15,4 @@ var MessageSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Message', MessageSchema);
+module.exports = mongoose.model('Messageb', MessagebSchema);

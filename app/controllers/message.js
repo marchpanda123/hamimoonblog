@@ -1,54 +1,54 @@
 var mongoose = require('mongoose');
-var Message = mongoose.model('Message');
+var Messageb = mongoose.model('Messageb');
 
-module.exports.messageGet = function(req, res) {
-	Message.find()
+module.exports.messagebGet = function(req, res) {
+	Messageb.find()
 	.sort('-created')
 	.populate('postedBy')
-	.exec(function(err, messages){
+	.exec(function(err, messagesb){
 		if(err) res.send(err);
-		res.json(messages);
+		res.json(messagesb);
 	});
 }
 
-module.exports.messagePost = function(req, res) {
+module.exports.messagebPost = function(req, res) {
 	
-	var messages = new Message();
+	var messagesb = new Messageb();
 	req.body.postedBy = req.decoded._doc._id;
 
-	messages.message = req.body.message;
-	messages.postedBy = req.body.postedBy;
+	messagesb.message = req.body.message;
+	messagesb.postedBy = req.body.postedBy;
 
-	messages.save(function(err) {
+	messagesb.save(function(err) {
 			if(err) res.send(err);
-			res.json(messages);
-	console.log(messages);
+			res.json(messagesb);
+	console.log(messagesb);
 		});
 }
 
-module.exports.messageGetId = function(req, res) {
-	Message.findById(req.params.messageId, function(err,message) {
+module.exports.messagebGetId = function(req, res) {
+	Messageb.findById(req.params.messagebId, function(err,messageb) {
 		if(err) res.send(err);
-		res.json(message);
+		res.json(messageb);
 	})
 }
 
-module.exports.messagePutId = function(req, res) {
-	Message.findById(req.params.messageId, function(err, message) {
+module.exports.messagebPutId = function(req, res) {
+	Messageb.findById(req.params.messagebId, function(err, messageb) {
 		if(err) res.send(err);
-		message.message = req.body.message;
-		message.save(function(err) {
+		messageb.message = req.body.message;
+		messageb.save(function(err) {
 			if(err) res.send(err);
-			res.json(message);
+			res.json(messageb);
 		})
 	})
 }
 
 
-module.exports.messageDeleteId = function(req, res) {
-	Message.remove({
-		_id: req.params.messageId
-	}, function(err, message) {
+module.exports.messagebDeleteId = function(req, res) {
+	Messageb.remove({
+		_id: req.params.messagebId
+	}, function(err, messageb) {
 		if(err) res.send(err);
 		res.json({ message:'Successfully delete'});
 	});

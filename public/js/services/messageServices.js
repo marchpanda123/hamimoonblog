@@ -1,13 +1,13 @@
 (function(){
 
 	angular.module('startApp')
-	.factory('MessageFactory',[
+	.factory('MessagebFactory',[
 		'$resource',
 		'baseUrl',
 		function($resource,baseUrl){
 			//get tags
 		return $resource(baseUrl + 
-			"message/:messageId", {messageId: "@id"},
+			"messageb/:messagebId", {messagebId: "@id"},
 			{ create: {method:"POST"}, save: {method:"PUT"}});
 	}]);
 	

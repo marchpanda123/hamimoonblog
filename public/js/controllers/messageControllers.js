@@ -1,28 +1,27 @@
 (function() {
-	angular.module('startApp').controller('messageCtrl',[
+	angular.module('startApp').controller('messagebCtrl',[
 		'$scope',
-		'MessageFactory',
+		'MessagebFactory',
 		'AuthFactory',
 		function($scope,
-			MessageFactory,
+			MessagebFactory,
 			AuthFactory
 			) {
 			$scope.isAuth = AuthFactory.isAuthenticated();
 			$scope.isAdmin = AuthFactory.isAdmin();
 			$scope.currentMessages = null;
 
-			$scope.listMessages = function() {
-				$scope.messages = MessageFactory.query();
+			$scope.listMessagesb = function() {
+				$scope.messagesb = MessagebFactory.query();
 			}
 
-			$scope.createMessage = function(message) {
-				console.log(message);
-				new MessageFactory(message).$create()
-				.then(function(newMessage) {
-					$scope.messages.push(newMessage);
+			$scope.createMessageb = function(messageb) {
+				new MessagebFactory(messageb).$create()
+				.then(function(newMessageb) {
+					$scope.messagesb.push(newMessageb);
 					window.location.reload();
 				});
 			}
-			$scope.listMessages();
+			$scope.listMessagesb();
 		}]);	
 })();
