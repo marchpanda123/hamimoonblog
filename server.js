@@ -35,6 +35,7 @@ var TimeCheck = require('./app/models/timecheck.js');
 var Carousel = require('./app/models/carousel.js');
 var Tag = require('./app/models/tag.js');
 var Album = require('./app/models/album.js');
+var Message = require('./app/models/message.js');
 //passport config
 app.use(passport.initialize());
 passport.use(new LocalStrategy(User.authenticate()));

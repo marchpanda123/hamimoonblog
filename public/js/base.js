@@ -253,6 +253,15 @@
 					}
 				}
 			})
+			.state('app.message',{
+				url:'message',
+				views:{
+					'content@': {
+						templateUrl:'views/message.html',
+						controller:'messageCtrl'
+					}
+				}
+			})
 			.state('app.aboutme', {
 				url:'aboutme',
 				views:{

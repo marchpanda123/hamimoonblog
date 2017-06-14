@@ -43,7 +43,9 @@
                         <h2 ng-if="!isAuth" class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.articlesUser" ng-click="toTopDisplay()">文章</h2>
                         <h2 ng-if="isAuth && !isAdmin" class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.articlesUser" ng-click="toTopDisplay()" ng-click="toTopDisplay()">文章</h2>
                         <h2 ng-if="isAuth && isAdmin" class="margin-top-5 margin-bottom-0 indexfont1 pointCursor" ui-sref="app.articles" ng-click="toTopDisplay()">文章</h2>
-                        <p class="indexfont2">共有{{articlesUser.length}}篇文章</p>
+                        <p class="indexfont2" ng-if="!isAuth">共有{{articlesUser.length}}篇文章</p>
+                        <p class="indexfont2" ng-if="isAuth && !isAdmin">共有{{articlesUser.length}}篇文章</p>
+                        <p class="indexfont2" ng-if="isAuth && isAdmin">共有{{articles.length}}篇文章</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-3">

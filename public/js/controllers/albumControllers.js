@@ -103,6 +103,21 @@
 				({albumboxId:$stateParams.albumboxId,albumpicId:albumpic._id})
 				$state.go($state.current, {}, {reload: true});
 			}
+			//delete box
+			
+			$scope.deleteAlbumbox = function(albumbox) {
+
+				var r = confirm("确认要删除吗？相册都会清空相片都会木有咯！");
+				if (r == true) {
+			        AlbumFactory.delete({albumboxId:albumbox._id})
+					$state.go($state.current, {}, {reload: true});
+			    } else {
+			        $state.go($state.current, {}, {reload: true});
+			    }
+
+				
+			}
+
 
 			$scope.customerpic = {}
 			$scope.Submitpic = function() {
@@ -121,8 +136,6 @@
 			    className:'ngdialog-theme-default',
 			    controller:"albumCtrl"})
 			}
-			
-			
 
 			$scope.listAlbumBox();
 		}]);
