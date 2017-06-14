@@ -16,7 +16,7 @@ module.exports.messagebPost = function(req, res) {
 	var messagesb = new Messageb();
 	req.body.postedBy = req.decoded._doc._id;
 
-	messagesb.message = req.body.message;
+	messagesb.messageb = req.body.messageb;
 	messagesb.postedBy = req.body.postedBy;
 
 	messagesb.save(function(err) {
@@ -36,7 +36,7 @@ module.exports.messagebGetId = function(req, res) {
 module.exports.messagebPutId = function(req, res) {
 	Messageb.findById(req.params.messagebId, function(err, messageb) {
 		if(err) res.send(err);
-		messageb.message = req.body.message;
+		messageb.messageb = req.body.messageb;
 		messageb.save(function(err) {
 			if(err) res.send(err);
 			res.json(messageb);

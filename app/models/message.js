@@ -6,7 +6,7 @@ var MessagebSchema = new Schema({
 		type:Date,
 		default:Date.now
 	},
-	message:{
+	messageb:{
 		type: String
 	},
 	postedBy: {

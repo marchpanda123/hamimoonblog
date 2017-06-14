@@ -253,8 +253,8 @@
 					}
 				}
 			})
-			.state('app.message',{
-				url:'message',
+			.state('app.messageb',{
+				url:'messageb',
 				views:{
 					'content@': {
 						templateUrl:'views/message.html',
