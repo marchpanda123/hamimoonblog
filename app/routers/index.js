@@ -15,7 +15,7 @@ var carouselCtrl = require('../controllers/carousel.js')
 var tagCtrl = require('../controllers/tag.js')
 var albumboxCtrl = require('../controllers/albumbox.js')
 var albumpicCtrl = require('../controllers/albumpic.js')
-var messagebCtrl = require('../controllers/message.js')
+var messagebCtrl = require('../controllers/messageb.js')
 //middleware
 router.use(function(req, res, next) {
 	console.log('something is happening.');
