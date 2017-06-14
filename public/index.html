@@ -95,22 +95,22 @@
                                     <a ui-sref="app.albumbox">芋头熊的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.articles">我的文章</a>
+                                    <a ui-sref="app.articles" ng-click="toTopDisplay()">我的文章</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.albumbox">我的相册</a>
+                                    <a ui-sref="app.albumbox" ng-click="toTopDisplay()">我的相册</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.articleCreate">创建新文章</a>
+                                    <a ui-sref="app.articleCreate" ng-click="toTopDisplay()">创建新文章</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.carousel">上传轮播图片</a>
+                                    <a ui-sref="app.carousel" ng-click="toTopDisplay()">上传轮播图片</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.tags">标签管理</a>
+                                    <a ui-sref="app.tags" ng-click="toTopDisplay()">标签管理</a>
                                 </li>
                                 <li ng-if="isAuthenticated && isAdmin">
-                                    <a ui-sref="app.articlePopular">热门文章管理</a>
+                                    <a ui-sref="app.articlePopular" ng-click="toTopDisplay()">热门文章管理</a>
                                 </li>
                             </ul>
                         </li>
