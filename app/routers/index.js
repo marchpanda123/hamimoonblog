@@ -77,13 +77,12 @@ router.get('/albumbox/:albumboxId/albumpics/:albumpicId', Verify.verifyOrdinaryU
 router.put('/albumbox/:albumboxId/albumpics/:albumpicId', Verify.verifyOrdinaryUser, albumpicCtrl.albumpicsPutId);
 router.delete('/albumbox/:albumboxId/albumpics/:albumpicId', Verify.verifyOrdinaryUser, albumpicCtrl.albumpicsDeleteId);
 
-
-//message routers
+//message board routers
 router.get('/messageb', messagebCtrl.messagebGet);
 router.post('/messageb', Verify.verifyOrdinaryUser, messagebCtrl.messagebPost);
 router.get('/messageb/:messagebId', messagebCtrl.messagebGetId);
 router.put('/messageb/:messagebId', Verify.verifyOrdinaryUser, messagebCtrl.messagebPutId);
-router.delete('/message/:messageId', Verify.verifyOrdinaryUser, messagebCtrl.messagebDeleteId);
+router.delete('/messageb/:messagebId', Verify.verifyOrdinaryUser, messagebCtrl.messagebDeleteId);
 
 //upload images
 router.post('/upload', upload.any(), function(req, res, next) {
