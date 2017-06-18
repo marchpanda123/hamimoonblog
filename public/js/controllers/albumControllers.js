@@ -63,6 +63,8 @@
 					$scope.currentAlbumbox.albumPage = r.filename;
 				});
 			}
+
+			
 			//To Albumbox
 			$scope.toAlbumbox = function(albumboxId) {
 				$state.go('app.albumpic',{albumboxId: albumboxId});

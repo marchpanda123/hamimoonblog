@@ -172,83 +172,20 @@
 					}
 				}
 			})
-			.state('app.hufupin', {
-				url:'hufupin',
+			.state('app.daigouDetail', {
+				url:'daigou/:daigouId/daigoutag/:daigoutagId',
 				views:{
 					'content@': {
-						templateUrl:'views/daigou/hufupin.html',
+						templateUrl:'views/daigou/daigouDetail.html',
 						controller:'daigouCtrl'
 					}
 				}
 			})
-			.state('app.yingyouer', {
-				url:'yingyouer',
+			.state('app.daigouDetail.pro', {
+				url:'daigou/:daigouId/daigoutag/:daigoutagId/daigoupro/:daigouroId',
 				views:{
-					'content@': {
-						templateUrl:'views/daigou/yingyouer.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.caizhuang', {
-				url:'caizhuang',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/caizhuang.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.xiangshui', {
-				url:'xiangshui',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/xiangshui.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.baojianpin', {
-				url:'baojianpin',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/baojianpin.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.dazhecun', {
-				url:'dazhecun',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/dazhecun.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.hongjiu', {
-				url:'hongjiu',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/hongjiu.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.shechipin', {
-				url:'shechipin',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/shechipin.html',
-						controller:'daigouCtrl'
-					}
-				}
-			})
-			.state('app.richang', {
-				url:'richang',
-				views:{
-					'content@': {
-						templateUrl:'views/daigou/richang.html',
+					'': {
+						templateUrl:'views/daigou/daigouPro.html',
 						controller:'daigouCtrl'
 					}
 				}

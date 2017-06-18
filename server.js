@@ -36,6 +36,8 @@ var Carousel = require('./app/models/carousel.js');
 var Tag = require('./app/models/tag.js');
 var Album = require('./app/models/album.js');
 var Messageb = require('./app/models/messageb.js');
+var Daigou = require('./app/models/daigou.js');
+var DaigouTag = require('./app/models/daigou.js');
 //passport config
 app.use(passport.initialize());
 passport.use(new LocalStrategy(User.authenticate()));

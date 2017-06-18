@@ -1,0 +1,19 @@
+<div ng-controller="daigouCtrl" class="ngdialog-message">
+    <div class="">
+        <h3>创建新标签 </h3>
+    </div>
+    <div class="">&nbsp;</div>
+    <div class="">
+        <form ng-submit="createDaigouTag(currentDaigouTag)" name="login_form" ng-disabled="login_form.$invalid">
+            <div class="form-group">
+                <label>标签名</label>
+                <input type="text" class="form-control input-sm" placeholder="name of the daigouclasstag" ng-model="currentDaigouTag.productName">
+            </div>
+            <button type="submit" class="btn btn-info btn-sm" >确定</button>
+            <button type="button" class="btn btn-default btn-sm" ng-click=closeThisDialog("Cancel")>取消</button> &nbsp; &nbsp;
+        </form>
+    </div>
+    <div>
+
+    </div>
+</div>

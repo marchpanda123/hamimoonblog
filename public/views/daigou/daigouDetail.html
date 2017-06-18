@@ -1,0 +1,40 @@
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <div class="col-md-12">
+            <nav class="breadcrumb">
+              <a class="breadcrumb-item" ui-sref="app">主页</a>
+              <a class="breadcrumb-item" ui-sref="app.daigou">/芋头熊的代购</a>
+              <span class="breadcrumb-item active">/{{daigouDetail.daigouClass}}</span>
+            </nav>
+            <h2>{{daigouDetail.daigouClass}}</h2>
+            <a ng-if="isAuth && isAdmin" ng-click="openDaigouCreateTag()" class="vbtn vpurple">添加标签</a>
+            
+                <!-- Intro / Why Us? -->
+                <div class="row">
+                    <div class="col-md-3 daigoutagbox">
+                      <ul ng-repeat="items in daigouDetail.classTag" class="daigoutag">
+                        <li class="pointCursor" ng-click="toDaigouPro(items._id)">
+                          <i class="fa fa-share fa-1x"></i>{{items.productName}}<a ng-if="isAuth && isAdmin" ng-click="deleteDaigouTag(items)" class="vbtn vpurple">删除</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div ui-view class="col-md-9">请在左边查找您需要的分类</div>
+                </div>
+
+
+                <!-- End Intro / Why Us? -->
+                <hr class="margin-top-20 margin-bottom-30">
+                <!-- Middle Text -->
+                <div class="row">
+                    <div class="col-md-12 text-center margin-top-10 animate fadeInUp">
+                        <h2 class="text-center margin-top-10">您的鼓励是对我最大的支持</h2>
+                        <p class="text-center margin-bottom-30">希望您能满意</p>
+                    </div>
+                </div>
+                <!-- End Middle Text -->
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

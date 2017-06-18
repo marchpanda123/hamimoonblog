@@ -1,0 +1,21 @@
+<div id="content">
+    <a ng-if="isAuth && isAdmin" ng-click="openDaigouCreatePro()" class="vbtn vblue">添加标签</a>
+    <div class="background-white daigouprobox">
+        <div class="row margin-vert-30">
+            <div class="col-md-12" ng-repeat="item in daigouPros">
+              <div class="col-md-12">
+                <p class="md-display-1">{{item.title}}</p>
+              </div> 
+              <a ng-if="isAuth && isAdmin" ng-click="deleteDaigouPro(item)" class="vbtn vblue">删除</a>
+              <div class="col-md-4">
+                <img ng-src="../uploads/{{item.daigouPage}}" class="daigouimg1">
+              </div>
+              <div class="col-md-8">
+                <p>
+                  {{item.content}}
+                </p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

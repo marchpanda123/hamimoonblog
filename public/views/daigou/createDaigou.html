@@ -1,0 +1,37 @@
+<div ng-controller="daigouCtrl" class="ngdialog-message">
+    <div class="">
+        <h3>创建新分类 </h3>
+    </div>
+    <div class="">&nbsp;</div>
+    <div class="">
+        <form ng-submit="createDaigou(currentDaigou)" name="login_form" ng-disabled="login_form.$invalid">
+            <div class="form-group">
+                <label>种类名</label>
+                <input type="text" class="form-control input-sm" placeholder="name of the daigouclass" ng-model="currentDaigou.daigouClass">
+            </div>
+            <div class="form-group">
+                <label>小标题</label>
+                <textarea class="form-control input-sm" placeholder="subTitle" ng-model="currentDaigou.subTitle"></textarea>
+            </div>
+            <div class="form-group">
+                <label>种类描述</label>
+                <textarea class="form-control input-sm" placeholder="daigouIntro" ng-model="currentDaigou.daigouIntro"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">种类封面</label>
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-7 col-md-offset-0">
+                            <input type="file" id="exampleInputFile" class="form-control" file-model="customer.classPage">
+                            <div class="btn btn-primary" ng-click="Submit()">提交</div>
+                            <img ng-src="../uploads/{{currentDaigou.classPage}}" style="width: 50px">
+                        </div>
+                    </div>
+            </div>
+            <button type="submit" class="btn btn-info btn-sm" >确定</button>
+            <button type="button" class="btn btn-default btn-sm" ng-click=closeThisDialog("Cancel")>取消</button> &nbsp; &nbsp;
+        </form>
+    </div>
+    <div>
+
+    </div>
+</div>
