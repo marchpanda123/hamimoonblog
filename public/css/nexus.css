@@ -3741,3 +3741,12 @@ main p {
 .daigoutagbox {
   border-right: 1px solid black;
 }
+
+.daigoupicfix{
+  width: 175px;
+  height: 145px;
+}
+
+.daigouclasstext{
+  font-size: 18px;
+}
