@@ -3749,4 +3749,9 @@ main p {
 
 .daigouclasstext{
   font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.daigouclasstext2{
+  line-height: 1.5em;
 }
