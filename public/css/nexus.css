@@ -3571,8 +3571,8 @@ main p {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 25px;
-  right: 1px;
+  bottom: 13px;
+  right: 44px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   /* image replacement properties */
   overflow: hidden;
@@ -3754,4 +3754,8 @@ main p {
 
 .daigouclasstext2{
   line-height: 1.5em;
+}
+
+.daigouprodetail{
+  margin-bottom:25px;
 }

@@ -43,6 +43,12 @@
     		$state.go('app');
     		window.location.reload();
 		};
+
+		$scope.userInfo = function() {
+			$state.go('app.users');
+		}
+
+
 		//user change info
 		$scope.doChangeInfo = function() {
 			AuthFactory.changeinfo($scope.userinfo);
