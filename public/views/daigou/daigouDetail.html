@@ -7,19 +7,19 @@
               <a class="breadcrumb-item" ui-sref="app.daigou">/芋头熊的代购</a>
               <span class="breadcrumb-item active">/{{daigouDetail.daigouClass}}</span>
             </nav>
-            <h2>{{daigouDetail.daigouClass}}</h2>
+            <h2><img src="../../img/blog/cart.png" class="daigoudetailimg">{{daigouDetail.daigouClass}}</h2>
             <a ng-if="isAuth && isAdmin" ng-click="openDaigouCreateTag()" class="vbtn vpurple">添加标签</a>
             
                 <!-- Intro / Why Us? -->
                 <div class="row">
                     <div class="col-md-3 daigoutagbox">
                       <ul ng-repeat="items in daigouDetail.classTag" class="daigoutag">
-                        <li class="pointCursor" ng-click="toDaigouPro(items._id)">
-                          <i class="fa fa-share fa-1x"></i>{{items.productName}}<a ng-if="isAuth && isAdmin" ng-click="deleteDaigouTag(items)" class="vbtn vpurple">删除</a>
+                        <li class="pointCursor daigoudetailtag" ng-click="toDaigouPro(items._id)">
+                          {{items.productName}}<a ng-if="isAuth && isAdmin" ng-click="deleteDaigouTag(items)" class="vbtn vpurple">删除</a>
                         </li>
                       </ul>
                     </div>
-                    <div ui-view class="col-md-9">请在左边查找您需要的分类</div>
+                    <div ui-view class="col-md-9">巴黎留学生代购，物品均为本人一手采购，可直播关于药妆，彩妆，红酒，母婴及保健品。药妆为药房采购。彩妆及其他护肤品均购于丝芙兰，marionnaud，以及nocibe，可拍购物小票。拼邮回国，北京或深圳分发。如购买超过5kg可法国直邮。关于奢侈品,奢侈品购于老佛爷，春天百货，及品牌门店。无论邮寄或者人肉带回都会给小票，小票作为凭证和国内专柜保养的依据。奢侈品邮寄，直邮不包关税，人肉包清关无关税，可以自行选择收货方式。</div>
                 </div>
 
 
